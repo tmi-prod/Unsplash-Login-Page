@@ -49,14 +49,6 @@ function Login() {
     </div>
   );
 
-  const glassStyle = {
-    color: "black",
-    backgroundColor: "rgba(255, 255, 255, 0.1)",
-    backdropFilter: "blur(5px)",
-    borderRadius: "4px",
-    borderColor: "aliceblue",
-  };
-
   return (
     <div className="form-demo">
       <Dialog
@@ -81,8 +73,12 @@ function Login() {
         <div
           className="card"
           style={{
-            ...glassStyle,
-            backgroundColor: "rgba(255, 255, 255, 0.4)",
+            color: "black",
+            backdropFilter: "blur(10px)",
+            borderRadius: "4px",
+            borderColor: "aliceblue",
+            backgroundColor: "rgba(255, 255, 255, 1)",
+            filter: "drop-shadow(3px 3px 8px #333)",
             padding: 20,
           }}
         >
@@ -103,7 +99,6 @@ function Login() {
                   }}
                   render={({ field, fieldState }) => (
                     <InputText
-                      //style={glassStyle}
                       id={field.name}
                       {...field}
                       className={classNames({
@@ -129,7 +124,6 @@ function Login() {
                   rules={{ required: "Password is required." }}
                   render={({ field, fieldState }) => (
                     <Password
-                      style={glassStyle}
                       id={field.name}
                       {...field}
                       toggleMask
@@ -156,7 +150,6 @@ function Login() {
                 rules={{ required: false }}
                 render={({ field, fieldState }) => (
                   <Checkbox
-                    style={glassStyle}
                     inputId={field.name}
                     onChange={(e) => field.onChange(e.checked)}
                     checked={field.value}
@@ -179,7 +172,10 @@ function Login() {
                 label="Login"
                 className="p-mt-2"
                 style={{
-                  ...glassStyle,
+                  color: "black",
+                  backgroundColor: "rgba(255, 255, 255, 1)",
+                  borderRadius: "4px",
+                  borderColor: "indigo",
                   width: "30%",
                 }}
               />
